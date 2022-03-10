@@ -6,6 +6,10 @@
            sync-c="true"
            sync-j="8" /> 
 
+    <remote name="lineage" 
+          revision="refs/heads/lineage-19.0"
+          remote="github" />
+  
   <remote  name="aosp"
            fetch="https://android.googlesource.com"
            review="android-review.googlesource.com"
