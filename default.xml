@@ -1,7 +1,3 @@
-
-repo sync --force-sync frameworks/opt/net/ims
-
-
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
