@@ -1,182 +1,45 @@
+
+repo sync --force-sync frameworks/opt/net/ims
+
+
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
+  <remote  name="Redmi-MT6768"
+           fetch="https://github.com/Redmi-MT6768"
+           revision="twelve"/>
 
-  <remote name="lineage" 
-          fetch="https://github.com"
-          revision="refs/heads/lineage-19.0"
-         />
-
-  <!-- <default revision="refs/heads/lineage-18.0"
-           remote="github"
-           sync-c="true"
-           sync-j="8" /> -->
-
-  <remote  name="aosp"
-           fetch="https://android.googlesource.com"
-           review="android-review.googlesource.com"
-           revision="refs/tags/android-12.1.0_r1" />  
-
-  <remote  name="github"
+    <remote  name="merlin"
+           fetch="https://github.com/DarkLoki-KL"
+           revision="twelve"/>
+  
+    <remote  name="github"
            fetch=".."
            review="review.lineageos.org" />
-
-  <!-- LineageOS additions -->
-  <project path="android" name="LineageOS/android" remote="lineage"/>
-  <project path="device/lineage/atv" name="LineageOS/android_device_lineage_atv" remote="lineage" />
-  <project path="device/lineage/car" name="LineageOS/android_device_lineage_car" remote="lineage" />
-  <project path="device/lineage/sepolicy" name="LineageOS/android_device_lineage_sepolicy" remote="lineage" />
-  <project path="external/bash" name="LineageOS/android_external_bash" remote="lineage" />
-  <project path="external/chromium-webview" name="LineageOS/android_external_chromium-webview" groups="pdk" clone-depth="1" revision="master" remote="lineage" />
-  <project path="external/exfatprogs" name="LineageOS/android_external_exfatprogs" remote="lineage" />
-  <project path="external/htop" name="LineageOS/android_external_htop" remote="lineage" />
-  <project path="external/libncurses" name="LineageOS/android_external_libncurses" remote="lineage" />
-  <!--<project path="external/libnfc-nxp" name="LineageOS/android_external_libnfc-nxp" />-->
-  <project path="external/nano" name="LineageOS/android_external_nano" remote="lineage" />
   
-  <project path="external/tinyxml" name="platform/external/tinyxml" groups="pdk" remote="aosp" revision="refs/tags/android-11.0.0_r46" />
-  <!--<project path="external/unrar" name="LineageOS/android_external_unrar" />-->
-  <project path="external/vim" name="LineageOS/android_external_vim" remote="lineage" />
-
-
-  <project path="hardware/lineage/interfaces" name="LineageOS/android_hardware_lineage_interfaces" remote="lineage" />
-  <project path="hardware/lineage/livedisplay" name="LineageOS/android_hardware_lineage_livedisplay" remote="lineage" />
-  <project path="lineage-sdk" name="LineageOS/android_lineage-sdk" remote="lineage" />
-  <project path="packages/apps/AudioFX" name="LineageOS/android_packages_apps_AudioFX" remote="lineage" />
-  <project path="packages/apps/Backgrounds" name="LineageOS/android_packages_apps_Backgrounds" remote="lineage" />
-  <project path="packages/apps/DeskClock" name="LineageOS/android_packages_apps_DeskClock" groups="pdk-fs" remote="lineage" />
-  <project path="packages/apps/Eleven" name="LineageOS/android_packages_apps_Eleven" remote="lineage" />
-  <!--<project path="packages/apps/Etar" name="LineageOS/android_packages_apps_Etar" />-->
-  <project path="packages/apps/ExactCalculator" name="LineageOS/android_packages_apps_ExactCalculator" remote="lineage" />
-  <!--<project path="packages/apps/FMRadio" name="LineageOS/android_packages_apps_FMRadio" />-->
-  <project path="packages/apps/FlipFlap" name="LineageOS/android_packages_apps_FlipFlap" remote="lineage" />
-  <project path="packages/apps/Jelly" name="LineageOS/android_packages_apps_Jelly" remote="lineage" />
+    <remote  name="merlinx"
+           fetch="https://github.com/LokiAsDev1"
+           revision="twelve" />
+  
+  
+ <!-- Device Trees -->
+  <project path="device/xiaomi/merlinx" name="android_device_xiaomi_merlinx" remote="merlin" revision="lineage-19.0"/>
+  <project path="device/xiaomi/lava" name="android_device_xiaomi_lava" remote="Redmi-MT6768" revision="lineage-19.0"/>
+  <project path="device/xiaomi/mt6768-common" name="android_device_xiaomi_mt6768-common" remote="merlin" revision="lineage-19.0"/>
  
+ <!-- Kernel -->
+  <project path="kernel/xiaomi/mt6768" name="android_kernel_xiaomi_mt6768" remote="Redmi-MT6768"/>
 
-  <project path="packages/apps/LineageParts" name="LineageOS/android_packages_apps_LineageParts" remote="lineage" />
-  <project path="packages/apps/Profiles" name="LineageOS/android_packages_apps_Profiles" remote="lineage" />
-  <project path="packages/apps/Recorder" name="LineageOS/android_packages_apps_Recorder" remote="lineage" />
-  <project path="packages/apps/Seedvault" name="LineageOS/android_packages_apps_Seedvault" remote="lineage" />
-  <project path="packages/apps/SetupWizard" name="LineageOS/android_packages_apps_SetupWizard" remote="lineage" />
-  <project path="packages/apps/SimpleDeviceConfig" name="LineageOS/android_packages_apps_SimpleDeviceConfig" remote="lineage" />
-  <!--<project path="packages/apps/Snap" name="LineageOS/android_packages_apps_Snap" />-->
-  <project path="packages/apps/Trebuchet" name="LineageOS/android_packages_apps_Trebuchet" remote="lineage" />
-  <project path="packages/apps/Updater" name="LineageOS/android_packages_apps_Updater" remote="lineage" />
-  <project path="packages/overlays/Lineage" name="LineageOS/android_packages_overlays_Lineage" remote="lineage" />
-  <project path="packages/resources/devicesettings" name="LineageOS/android_packages_resources_devicesettings" remote="lineage" />
-  <project path="prebuilts/extract-tools" name="LineageOS/android_prebuilts_extract-tools" clone-depth="1" remote="lineage" />
-  <project path="prebuilts/tools-lineage" name="LineageOS/android_prebuilts_tools-lineage" clone-depth="1" remote="lineage" />
-  <project path="tools/extract-utils" name="LineageOS/android_tools_extract-utils" remote="lineage" />
+ <!-- Vendor Trees -->
+  <project path="vendor/xiaomi/merlinx" name="android_vendor_xiaomi_merlinx" remote="merlin"/>
+  <project path="vendor/xiaomi/lava" name="android_vendor_xiaomi_lava" remote="Redmi-MT6768"/>
+  <project path="vendor/xiaomi/mt6768-ims" name="android_vendor_xiaomi_mt6768-ims" remote="merlin"/>
   
-  
-  <project path="vendor/lineage" name="LineageOS/android_vendor_lineage" remote="lineage" />
-  
-  <!-- <project path="vendor/lineage" name="android_vendor_lineage" remote="merlinx" /> -->
+ <!-- Extras -->
+  <project path="device/mediatek/sepolicy_vndr" name="StatiXOS/android_device_mediatek_sepolicy_vndr" remote="github" revision="sc"/>
 
-  <!-- CodeAurora additions -->
-  <project path="device/qcom/sepolicy" name="LineageOS/android_device_qcom_sepolicy" groups="qcom,pdk-qcom" remote="lineage" />
-
-
-  <project path="device/qcom/sepolicy-legacy-um" name="LineageOS/android_device_qcom_sepolicy" groups="qcom,pdk-qcom" revision="lineage-19.0-legacy-um" remote="lineage" />
-  <project path="device/qcom/sepolicy_vndr" name="LineageOS/android_device_qcom_sepolicy_vndr" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="external/ant-wireless/ant_client" name="LineageOS/android_external_ant-wireless_ant_client" remote="lineage" />
-  <project path="external/ant-wireless/ant_native" name="LineageOS/android_external_ant-wireless_ant_native" remote="lineage" />
-  <project path="external/ant-wireless/ant_service" name="LineageOS/android_external_ant-wireless_ant_service" remote="lineage" />
-  <project path="external/ant-wireless/hidl" name="LineageOS/android_external_ant-wireless_hidl" remote="lineage" />
-  
-
-  <project path="external/json-c" name="LineageOS/android_external_json-c" groups="qcom,pdk-qcom" remote="lineage" />
-  
-
-  <project path="hardware/qcom-caf/bootctrl" name="LineageOS/android_hardware_qcom_bootctrl" groups="qcom,pdk-qcom" revision="lineage-19.0-caf" remote="lineage" />
-  <project path="hardware/qcom-caf/common" name="LineageOS/android_hardware_qcom-caf_common" groups="qcom,pdk-qcom" remote="lineage" >
-    <!-- add guard for AOSP hardware/qcom dir -->
-    <linkfile src="os_pickup_aosp.mk" dest="hardware/qcom/Android.mk" />
-    
-
-
-
-    <linkfile src="os_pickup.bp" dest="hardware/qcom-caf/msm8998/Android.bp" />
-    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/msm8998/Android.mk" />
-    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sdm845/Android.bp" />
-    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sdm845/Android.mk" />
-    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8150/Android.bp" />
-    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8150/Android.mk" />
-    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8250/Android.bp" />
-    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8250/Android.mk" />
-    <linkfile src="os_pickup_qssi.bp" dest="hardware/qcom-caf/sm8350/Android.bp" />
-    <linkfile src="os_pickup.mk" dest="hardware/qcom-caf/sm8350/Android.mk" />
-    
-
-
-    <linkfile src="os_pickup_qssi_bt.bp" dest="device/qcom/qssi/Android.bp" />
-  </project>
-  
-
-
- 
-  <project path="hardware/qcom-caf/msm8998/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" revision="lineage-19.0-caf-msm8998" remote="lineage" />
-  <project path="hardware/qcom-caf/msm8998/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-19.0-caf-msm8998" remote="lineage" />
-  <project path="hardware/qcom-caf/msm8998/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-19.0-caf-msm8998" remote="lineage" />
-  <project path="hardware/qcom-caf/sdm845/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" revision="lineage-19.0-caf-sdm845" remote="lineage" />
-  <project path="hardware/qcom-caf/sdm845/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-19.0-caf-sdm845" remote="lineage" />
-  <project path="hardware/qcom-caf/sdm845/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-19.0-caf-sdm845" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8150/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" revision="lineage-19.0-caf-sm8150" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8150/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-19.0-caf-sm8150" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8150/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-19.0-caf-sm8150" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8250/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" revision="lineage-19.0-caf-sm8250" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8250/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-19.0-caf-sm8250" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8250/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-19.0-caf-sm8250" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8350/audio" name="LineageOS/android_hardware_qcom_audio" groups="qcom,qcom_audio,pdk-qcom" revision="lineage-19.0-caf-sm8350" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8350/display" name="LineageOS/android_hardware_qcom_display" groups="pdk-qcom,qcom,qcom_display" revision="lineage-19.0-caf-sm8350" remote="lineage" />
-  <project path="hardware/qcom-caf/sm8350/media" name="LineageOS/android_hardware_qcom_media" groups="qcom,pdk-qcom" revision="lineage-19.0-caf-sm8350" remote="lineage" />
-  <project path="hardware/qcom-caf/thermal" name="LineageOS/android_hardware_qcom_thermal" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="hardware/qcom-caf/vr" name="LineageOS/android_hardware_qcom_vr" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="hardware/qcom-caf/wlan" name="LineageOS/android_hardware_qcom_wlan" groups="qcom_wlan,pdk-qcom" revision="lineage-19.0-caf" remote="lineage" />
-  
-  <project path="vendor/codeaurora/telephony" name="LineageOS/android_vendor_codeaurora_telephony" remote="lineage" />
-  
-
-
- 
-  <project path="vendor/qcom/opensource/audio" name="LineageOS/android_vendor_qcom_opensource_audio" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/audio-hal/st-hal" name="LineageOS/android_vendor_qcom_opensource_audio-hal_st-hal" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys-intf/bluetooth" name="LineageOS/android_vendor_qcom_opensource_bluetooth-commonsys-intf" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys-intf/display" name="LineageOS/android_vendor_qcom_opensource_display-commonsys-intf" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys/bluetooth_ext" name="LineageOS/android_vendor_qcom_opensource_bluetooth_ext" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys/display" name="LineageOS/android_vendor_qcom_opensource_display-commonsys" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys/packages/apps/Bluetooth" name="LineageOS/android_vendor_qcom_opensource_packages_apps_Bluetooth" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/commonsys/system/bt" name="LineageOS/android_vendor_qcom_opensource_system_bt" groups="qcom,pdk-qcom" remote="lineage" />
-  
-
-  <project path="vendor/qcom/opensource/display" name="LineageOS/android_vendor_qcom_opensource_display" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/fm-commonsys" name="LineageOS/android_vendor_qcom_opensource_fm-commonsys" groups="qcom,qcom_fm" remote="lineage" />
-  <project path="vendor/qcom/opensource/data-ipa-cfg-mgr" name="LineageOS/android_vendor_qcom_opensource_data-ipa-cfg-mgr" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/dataservices" name="LineageOS/android_vendor_qcom_opensource_dataservices" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/interfaces" name="LineageOS/android_vendor_qcom_opensource_interfaces" groups="qcom,pdk-qcom" remote="lineage" />
- 
-
-  <project path="vendor/qcom/opensource/power" name="LineageOS/android_vendor_qcom_opensource_power" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/thermal-engine" name="LineageOS/android_vendor_qcom_opensource_thermal-engine" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/usb" name="LineageOS/android_vendor_qcom_opensource_usb" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/vibrator" name="LineageOS/android_vendor_qcom_opensource_vibrator" groups="qcom,pdk-qcom" remote="lineage" />
-  <project path="vendor/qcom/opensource/wfd-commonsys" name="LineageOS/android_vendor_qcom_opensource_wfd-commonsys" groups="qcom,pdk" remote="lineage" />
-
-  <!-- Infrastructure -->
-  <project path="lineage/ansible" name="LineageOS/ansible" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/charter" name="LineageOS/charter" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/crowdin" name="LineageOS/cm_crowdin" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/cve" name="LineageOS/cve_tracker" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/hudson" name="LineageOS/hudson" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/mirror" name="LineageOS/mirror" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/slackbot" name="LineageOS/slackbot" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/website" name="LineageOS/www" groups="infra" revision="master" remote="lineage" />
-  <project path="lineage/wiki" name="LineageOS/lineage_wiki" groups="infra" revision="master" remote="lineage" />
-
-  <!-- Tools -->
-  <project path="lineage/contributors-cloud-generator" name="LineageOS/contributors-cloud-generator" groups="tools" revision="master" remote="lineage" />
-  <project path="lineage/scripts" name="LineageOS/scripts" groups="tools" revision="master" remote="lineage" />
-  
-  
+ <!-- VoLTE fix -->
+  <project path="frameworks/opt/net/ims" name="frameworks_opt/_net_ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="merlinx" />
+  <project path="frameworks/opt/telephony" name="frameworks_opt_telephony" groups="pdk" remote="merlinx" />
   
 </manifest>
