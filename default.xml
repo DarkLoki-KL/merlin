@@ -26,6 +26,9 @@
   <remote  name="github"
            fetch=".."
            review="review.lineageos.org" />
+  
+  <superproject name="platform/superproject" remote="aosp" revision="android-12.0.0_r29" />
+  <contactinfo bugurl="go/repo-bug" />
 
   <!-- LineageOS additions -->
   <project path="android" name="LineageOS/android" remote="lineage"/>
