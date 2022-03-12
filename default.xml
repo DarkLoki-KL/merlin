@@ -9,6 +9,9 @@
            remote="aosp"
            sync-j="8" />
   
-<project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" />
+ <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r1" />
+ <contactinfo bugurl="go/repo-bug" />
+  
+ <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" />
   
 </manifest>
