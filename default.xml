@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <manifest>
 
-  <remote  name="aosp"
-           fetch="https://android.googlesource.com"
-           review="https://android-review.googlesource.com/" />
+
+  <remote name="ppui"
+          fetch="https://github.com/PixelPlusUI"
+          revision="sv2" />
+
+  <remote name="ppui-gitlab"
+          fetch="https://gitlab.com/PixelPlusUI"
+          revision="sv2" />
   
-  <default revision="refs/tags/android-12.1.0_r1"
-           remote="aosp"
-           sync-j="8" />
-  
- <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r1" />
- <contactinfo bugurl="go/repo-bug" />
-  
- <project path="external/chromium-webview" name="platform/external/chromium-webview" groups="pdk" clone-depth="1" />
+  <!-- <project path="vendor/aosp" name="vendor_aosp" remote="ppui" /> -->
+  <project path="vendor/gapps" name="vendor_gapps" remote="ppui-gitlab" />
   
 </manifest>
