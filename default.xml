@@ -15,9 +15,9 @@
         revision="refs/heads/12" />
 
   <!-- External -->
-  <project path="external/connectivity" name="android_external_connectivity" groups="qcom,pdk-qcom" remote="lineage" revision="lineage-18.1"/>
+  <project path="external/connectivity" name="android_external_connectivity" groups="qcom,pdk-qcom" remote="lineage" revision="lineage-18.1" />
   <project path="external/exfatprogs" name="android_external_exfatprogs" groups="pdk" remote="lineage" revision="lineage-19.0" />
-  <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="lineage" />
+  <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="lineage" revision="lineage-18.1" />
   <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="arrow" />
   <project path="external/tinyxml" name="android_external_tinyxml" remote="arrow" />
   <project path="external/json-c" name="android_external_json-c" groups="qcom,pdk-qcom" remote="lineage" revision="lineage-19.0" />
