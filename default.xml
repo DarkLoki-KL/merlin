@@ -15,7 +15,7 @@
         revision="refs/heads/12" />
 
   <!-- External -->
-  <project path="external/connectivity" name="android_external_connectivity" groups="qcom,pdk-qcom" remote="lineage" />
+  <project path="external/connectivity" name="android_external_connectivity" groups="qcom,pdk-qcom" remote="lineage" revision="lineage-18.1"/>
   <project path="external/exfatprogs" name="android_external_exfatprogs" groups="pdk" remote="lineage" revision="lineage-19.0" />
   <project path="external/libnfc-nxp" name="android_external_libnfc-nxp" remote="lineage" />
   <project path="external/ntfs-3g" name="android_external_ntfs-3g" remote="arrow" />
@@ -60,7 +60,7 @@
     <linkfile src="os_pickup.bp" dest="vendor/nxp/opensource/sn100x/Android.bp" />
     <linkfile src="os_pickup.mk" dest="vendor/nxp/opensource/sn100x/Android.mk" />
   </project>
-  <project path="hardware/qcom/sm7250/gps" name="android_hardware_qcom_sm7250_gps" groups="qcom_sm7250" remote="lineage">
+  <project path="hardware/qcom/sm7250/gps" name="android_hardware_qcom_sm7250_gps" groups="qcom_sm7250" remote="lineage" revision="lineage-18.1" >
     <linkfile src="os_pickup.mk" dest="hardware/qcom/sm7250/Android.mk" />
     <linkfile src="os_pickup.bp" dest="hardware/qcom/sm7250/Android.bp" />
   </project>
@@ -138,5 +138,5 @@
   <project path="vendor/qcom/opensource/wfd-commonsys" name="android_vendor_qcom_opensource_wfd-commonsys" remote="arrow" />
 
    <!-- System Repos -->
-   <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="lineage" />
+   <project path="system/tools/dtbtool" name="android_system_tools_dtbtool" remote="lineage" revision="lineage-18.1" />
  </manifest>
