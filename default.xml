@@ -23,7 +23,7 @@
            sync-c="true"
            sync-j="8" />
 
-  <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r2" />
+  <!-- <superproject name="platform/superproject" remote="aosp" revision="android-12.1.0_r2" /> -->
   <contactinfo bugurl="go/repo-bug" />
   
   <project path="frameworks/opt/net/ims" name="platform/frameworks/opt/net/ims" groups="frameworks_ims,pdk-cw-fs,pdk-fs" remote="aosp" />
